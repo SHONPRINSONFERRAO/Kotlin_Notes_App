@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation.xml"
+    app:startDestination="@id/notes_destination">
+    <fragment
+        android:id="@+id/notes_destination"
+        android:name="com.ferrao.app.screens.notes.NotesFragment"
+        android:label="title_fragment"
+        tools:layout="@layout/fragment_notes">
+        <action
+            android:id="@+id/action_notes_to_details"
+            app:destination="@id/notes_details_destination"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/notes_details_destination"
+        android:name="com.ferrao.app.screens.notesdetails.NotesDetailsFragment"
+        android:label="title_fragment"
+        tools:layout="@layout/fragment_notes_details">
+        <action
+            android:id="@+id/action_restart"
+            app:destination="@+id/notes_destination"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@+id/notes_destination" />
+        <argument
+            android:name="notes"
+            android:defaultValue="@null"
+            app:argType="com.ferrao.app.database.Notes"
+            app:nullable="true" />
+    </fragment>
+</navigation>

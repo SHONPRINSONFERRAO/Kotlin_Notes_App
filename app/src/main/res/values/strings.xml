@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kotlin Notes App</string>
+    <string name="title">Title...</string>
+    <string name="description">Add description...</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="no_notes_found">No notes found</string>
+</resources>
